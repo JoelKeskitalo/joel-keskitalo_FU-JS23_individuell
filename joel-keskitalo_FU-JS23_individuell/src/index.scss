@@ -1,0 +1,62 @@
+@import './sass/mixins';
+@import './sass/variables';
+
+body {
+    @include flex-center;
+}
+
+
+h1 {
+    color: $h1-primary-color;
+    font-family: $h1-primary-font;
+    font-size: 3rem;
+    line-height: 50px;
+    color: #2F2926;
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    color: $h2-primary-color;
+    font-family: $h2-primary-font;
+    font-size: 2rem;
+    font-weight: 700px;
+    line-height: 40px;
+    color: #2F2926;
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    color: $h3-primary-color;
+    font-family: $h3-primary-font;
+    font-size: 1.5rem;
+    line-height: 28.8px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    color: #FFFFFFB2;
+    font-family: $h3-primary-font;
+    font-size: 0.875rem;
+    
+}
+
+
+p {
+    font-family: $text-font;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #2F2926;
+}
+
+.reusable-button {
+    background-color:#2F2926;
+    border: 1px solid black;
+    border-radius: 2rem;
+    width: 15.5rem;
+    padding: 0.5rem;
+}

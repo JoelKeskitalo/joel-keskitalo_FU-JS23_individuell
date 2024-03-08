@@ -1,0 +1,73 @@
+.createprofile-container {
+    background-color:#F3E4E1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 38vh;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.symbol-container {
+    width: 1.3rem;
+    height: 1.3rem; 
+    display: flex;
+    justify-content: center; 
+    padding: 0; 
+    background-image: url('../../assets/CreateProfile/Vector.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-color: rgb(201, 199, 199);
+    border-radius: 12px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.createprofile-text {
+    line-height: 24px;
+}
+
+.createprofile-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+}
+
+.createprofile-form p {
+    text-align: left;
+    padding: 5px;
+    margin: 0;
+}
+
+.createprofile-form input {
+    border-radius: 6px;
+    border-style:double;
+    border-width: 1px;
+    border-color: #2F2926;
+    background-color: transparent;
+    padding: 10px;
+    width: 310px;
+    margin-bottom: 1rem;
+}
+
+
+label {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 0.8rem;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+
+.createprofile-footer {
+    margin-top: 3rem;
+}

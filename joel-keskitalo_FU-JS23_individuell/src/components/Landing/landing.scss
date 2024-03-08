@@ -1,0 +1,17 @@
+@import '../../index.scss';
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.landing-container {
+    display: flex;
+    flex-direction: column; // Staplar innehåll vertikalt
+    justify-content: flex-start; // Start från toppen
+    align-items: flex-start; // Start från vänster
+    padding: 20px; // Ger lite utrymme från kanten
+    height: 80vh;
+    width: 50vh;
+    background-image: url('../../assets/Landing/landingpage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
