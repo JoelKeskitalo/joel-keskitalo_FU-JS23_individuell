@@ -16,7 +16,6 @@ function App() {
 
     <Router>
       <div>
-        <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/menu" element={<Menu />} />

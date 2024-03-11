@@ -55,8 +55,16 @@ p {
 
 .reusable-button {
     background-color:#2F2926;
-    border: 1px solid black;
+    font-family: $h3-primary-font;
+    color: $h3-primary-color;
+    font-size: 1.5rem;
+    line-height: 28.8px;
+    text-align: center;
     border-radius: 2rem;
+    border: 0px;
     width: 15.5rem;
     padding: 0.5rem;
+    margin-bottom: 2rem;
 }
+
+

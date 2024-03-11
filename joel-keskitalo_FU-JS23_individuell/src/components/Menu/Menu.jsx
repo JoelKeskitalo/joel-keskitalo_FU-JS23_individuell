@@ -3,9 +3,14 @@ import './menu.scss';
 
 function Menu() {
 
+
+
+
     return (
 
         <div className='menupage-container'>
+
+
             <nav>
                 <ul>
                     <li><Link to="/coffemenu">Meny</Link></li>

@@ -41,7 +41,7 @@ function CreateProfile() {
                 </label>
 
                 <footer className='createprofile-footer'>
-                    <button className='reusable-button'><h3>Brew me a cup!</h3></button>
+                    <button className='reusable-button'>Brew me a cup!</button>
                 </footer>
 
             </div>

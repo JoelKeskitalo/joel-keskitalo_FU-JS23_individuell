@@ -1,0 +1,17 @@
+.navigate-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500; // Se till att knappen ligger över andra element
+    padding: 0.5rem 1rem; // Justera storlek efter behov
+    font-size: 1rem; // Justera textstorlek efter behov
+    color: #FFFFFF; // Textfärg
+    background-color: #2F2926; // Bakgrundsfärg, ändra efter behov
+    border: none;
+    border-radius: 0.5rem; // Justera för rundade hörn
+    cursor: pointer; // Ändra muspekaren till en pekare vid hover
+
+    &:hover {
+        background-color: #3e342f; // Mörkare nyans vid hover, ändra efter behov
+    }
+}

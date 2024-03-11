@@ -17,13 +17,13 @@
     justify-content: center;
     align-items: center; 
     padding: 0;
-    padding-bottom: 0; 
     height: 90vh;
     width: 50vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 .coffemenupage-header {
     width: 100%;
@@ -108,4 +108,25 @@
     background-repeat: no-repeat;
     padding: 0;
     margin-top: auto;
+}
+
+
+
+
+.cart-button {
+    position: absolute;
+    top: 0;
+    right: 0; // Ändrad från 'left' till 'right'
+    z-index: 10; // Se till att knappen ligger över andra element
+    padding: 0.5rem 1rem; // Justera storlek efter behov
+    font-size: 1rem; // Justera textstorlek efter behov
+    color: #FFFFFF; // Textfärg
+    background-color: #2F2926; // Bakgrundsfärg
+    border: none;
+    border-radius: 0.5rem; // Rundade hörn
+    cursor: pointer; // Ändra muspekaren till en pekare vid hover
+
+    &:hover {
+        background-color: #3e342f; // Mörkare nyans vid hover
+    }
 }

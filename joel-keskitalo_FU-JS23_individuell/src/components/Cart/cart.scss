@@ -1,14 +1,19 @@
 .cart {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    width: 80%; // Tar upp 80% av skärmens bredd
+    max-width: 600px; // Justera detta värde baserat på dina behov
+    height: 80%; // Tar upp 80% av skärmens höjd
+    background-color: #fff; // Vit bakgrund för varukorgen
     padding: 20px;
-    background-color: #f5f5f5;
-    width: 300px; // Justera bredden efter behov
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); // Ger en liten skugga runt varukorgen
+    overflow-y: auto; // Tillåter scrollning om innehållet överskrider höjden
+
+
+    
   
     h1, h2, p {
       width: 100%;
-      margin: 5px 0;
+      margin: 1rem 0;
+      
     }
   
     .cart-item {
@@ -28,6 +33,29 @@
   
     .total {
       float: right;
+      color: black;
+      font-size: 2rem;
+      margin-top: 0.5rem;
     }
   }
   
+
+  .cart-overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); // Skapar en mörkare bakgrund
+    z-index: 1000;
+  }
+
+
+
+  .navigate-button, .cart-button {
+    z-index: 1010; /* Högre än overlayen */
+    /* Övriga stilar som tidigare */
+}
