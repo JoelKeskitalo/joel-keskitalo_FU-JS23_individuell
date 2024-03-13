@@ -116,17 +116,24 @@
 .cart-button {
     position: absolute;
     top: 0;
-    right: 0; // Ändrad från 'left' till 'right'
-    z-index: 10; // Se till att knappen ligger över andra element
-    padding: 0.5rem 1rem; // Justera storlek efter behov
-    font-size: 1rem; // Justera textstorlek efter behov
-    color: #FFFFFF; // Textfärg
-    background-color: #2F2926; // Bakgrundsfärg
+    right: 0;
+    z-index: 10;
+    padding: 0.5rem;
+    font-size: 0; /* Tar bort textstorleken för att förhindra att text visas */
+    color: #FFFFFF;
+    background-color: #2F2926;
     border: none;
-    border-radius: 0.5rem; // Rundade hörn
-    cursor: pointer; // Ändra muspekaren till en pekare vid hover
-
-    &:hover {
-        background-color: #3e342f; // Mörkare nyans vid hover
-    }
+    border-radius: 50%; /* Gör knappen helt rund */
+    cursor: pointer;
+    width: 3rem; /* Ställer in en fast bredd */
+    height: 3rem; /* Ställer in en fast höjd */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+.cart-button:hover {
+    background-color: #3e342f;
+}
+

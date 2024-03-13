@@ -22,6 +22,18 @@
     margin-bottom: 1rem;
 }
 
+
+.profilepage-header {
+    position: relative;
+    width: 100%;
+    height: 10rem; 
+    background-image: url('../../assets/CoffeMenu/header.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+}
+
 .profilepage-container p {
     color: #FFFFFFCC;
 }
@@ -114,6 +126,7 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 

@@ -13,9 +13,14 @@ function NavigateButton({ to, buttonText = "Meny" }) {
   };
 
 
-  return <button className='navigate-button' onClick={handleNavigate}>Meny</button>;
-
-
+  return (
+    <button className='navigate-button' onClick={handleNavigate}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  );
+  
 }
 
 export default NavigateButton;

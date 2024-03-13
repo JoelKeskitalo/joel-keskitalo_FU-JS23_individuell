@@ -1,18 +1,22 @@
+@import '../../index.scss';
+
 .cart {
-    width: 80%; // Tar upp 80% av skärmens bredd
-    max-width: 600px; // Justera detta värde baserat på dina behov
-    height: 80%; // Tar upp 80% av skärmens höjd
-    background-color: #fff; // Vit bakgrund för varukorgen
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); // Ger en liten skugga runt varukorgen
-    overflow-y: auto; // Tillåter scrollning om innehållet överskrider höjden
+  display: flex;
+  flex-direction: column;
+  width: 80%; // Tar upp 80% av skärmens bredd
+  max-width: 600px; // Justera detta värde baserat på dina behov
+  height: 80%; // Tar upp 80% av skärmens höjd
+  background-color: #fff; // Vit bakgrund för varukorgen
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); // Ger en liten skugga runt varukorgen
+  overflow-y: auto; // Tillåter scrollning om innehållet överskrider höjden
 
 
     
   
     h1, h2, p {
-      width: 100%;
-      margin: 1rem 0;
+    width: 100%;
+    margin: 1rem 0;
       
     }
   
@@ -59,3 +63,23 @@
     z-index: 1010; /* Högre än overlayen */
     /* Övriga stilar som tidigare */
 }
+
+
+.submitorder-button {
+    background-color:#2F2926;
+    font-family: $h3-primary-font;
+    color: $h3-primary-color;
+    font-size: 1.5rem;
+    line-height: 28.8px;
+    text-align: center;
+    border-radius: 2rem;
+    border: 0px;
+    width: 15.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+

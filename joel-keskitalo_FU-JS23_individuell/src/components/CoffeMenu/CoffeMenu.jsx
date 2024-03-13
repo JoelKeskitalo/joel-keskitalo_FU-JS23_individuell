@@ -3,16 +3,18 @@ import NavigateButton from '../NavigateButton/NavigateButton';
 import useStore from '../Store/Store.jsx';
 import Cart from '../Cart/Cart.jsx';
 
+import bag from '../../assets/CartButton/bag.png';
 
 
 function CoffeMenu() {
 
-    const { addToCart, showCart, setShowCart } = useStore((state) => ({
-        addToCart: state.addToCart,
-        showCart: state.showCart,
-        setShowCart: state.setShowCart,
-    }));
+    const { addToCart, showCart, setShowCart } = useStore((state) => ({ // vi hämtar datan och tillstånden från vår Zustand-store
 
+        addToCart: state.addToCart, // Här referar vi till addToCart som vi skapade i Zustand-store, och möjligheten att manipulera dess state. 
+        showCart: state.showCart, // Showcart har ju false, vet vi ju. Detta deklarerade vi nästan först i Zustand-storen. 
+        setShowCart: state.setShowCart, // setShowCart är uppdateringsfunktionen för vår cart. 
+
+    }));
 
 
     const products = [
@@ -31,7 +33,7 @@ function CoffeMenu() {
 
             <NavigateButton to="/menu" buttonText="Meny"/>
 
-            <button className="cart-button" onClick={() => setShowCart(!showCart)}>Visa Varukorg</button>
+            <button className="cart-button" onClick={() => setShowCart(!showCart)}><img src={bag} alt ="Visa varukorg"/></button>
 
             {showCart && (
             <div className="cart-overlay">
@@ -44,7 +46,7 @@ function CoffeMenu() {
             <h1>Meny</h1>
 
 
-        <nav className='coffemenu'>
+        <nav className='coffemenu'> 
             <ul>
             {products.map((product) => (
                 <li key={product.id} className='kaffe-item'>

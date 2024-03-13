@@ -1,4 +1,5 @@
 import './about.scss';
+import NavigateButton from '../NavigateButton/NavigateButton';
 
 function About() {
 
@@ -8,7 +9,9 @@ function About() {
         
 
         <div className="aboutpage-container">
-            <header className='aboutpage-header'></header>
+            <header className='aboutpage-header'>
+                <NavigateButton to="/menu" buttonText="Meny"/>
+            </header>
 
             <div className="content-container">
                 <h1>Vårt kaffe</h1>

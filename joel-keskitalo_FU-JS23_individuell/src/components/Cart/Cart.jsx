@@ -1,19 +1,33 @@
+import { useNavigate } from "react-router-dom";
 import useStore from "../Store/Store.jsx";
 import './cart.scss';
 
 function Cart() {
 
-    const { cart, updateProductQuantity, removeFromCart } = useStore((state) => ({
+    const { cart, updateProductQuantity, removeFromCart, sendOrder } = useStore((state) => ({
 
         cart: state.cart,
         updateProductQuantity: state.updateProductQuantity,
-        removeFromCart: state.removeFromCart
+        removeFromCart: state.removeFromCart,
+        sendOrder: state.sendOrder
 
     }));
 
 
+    const navigate = useNavigate();
+
+
+
+    // Take my money-funktionen
+    const handleCheckout = () => {
+        sendOrder();
+        navigate('/status');
+    }
+
+
+
+
     const increaseQuantity = (productId) => {
-      
         const product = cart.find((product) => product.id === productId);
 
         updateProductQuantity(productId, product.quantity + 1);
@@ -21,8 +35,9 @@ function Cart() {
     };
 
 
-    const decreaseQuantity = (productId) => {
 
+
+    const decreaseQuantity = (productId) => {
         const product = cart.find((product) => product.id === productId);
 
         if (product.quantity > 1) {
@@ -33,6 +48,7 @@ function Cart() {
     };
 
 
+    
     // Beräkna totalen
     const total = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
 
@@ -53,6 +69,7 @@ function Cart() {
             ))}
             <h2>Total <span className="total">{total}kr</span></h2>
             <p>inkl moms + drönarleverans</p>
+            <button className="submitorder-button" onClick={handleCheckout}>Take my money!</button>
         </div>
 
       </div>

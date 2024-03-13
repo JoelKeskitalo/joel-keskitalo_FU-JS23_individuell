@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .createprofile-container {
     background-color:#F3E4E1;
     display: flex;
@@ -72,3 +74,19 @@ input[type="checkbox"] {
     margin-top: 3rem;
 }
 
+.submit-button {
+    background-color:#2F2926;
+    font-family: $h3-primary-font;
+    color: $h3-primary-color;
+    font-size: 1.5rem;
+    line-height: 28.8px;
+    text-align: center;
+    border-radius: 2rem;
+    border: 0px;
+    width: 15.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: center;
+    cursor: pointer;
+}

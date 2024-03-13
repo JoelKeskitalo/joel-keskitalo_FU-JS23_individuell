@@ -1,6 +1,29 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useStore from '../Store/Store.jsx';
 import './createprofile.scss';
 
 function CreateProfile() {
+
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+
+    const setUser = useStore((state) => state.setUser);
+
+    const navigate = useNavigate();
+
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+
+        setUser({ fullName, email })
+
+        navigate('/profile')
+
+    }
+
+
 
     return (
 
@@ -13,13 +36,15 @@ function CreateProfile() {
 
                 <p className="createprofile-text">Genom att skapa ett konto nedan kan du spara och se din orderhistorik.</p>
 
-                <form className="createprofile-form">
+                <form className="createprofile-form" onSubmit={handleSubmit}>
                     <p>Namn</p>
                     <input
                         name="fullname"
                         type="text"
                         placeholder="Sixten Kaffelövér"
                         maxLength="100"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
                         required
                     />
                     <p>E-post</p>
@@ -28,21 +53,22 @@ function CreateProfile() {
                         type="text"
                         placeholder="sixten.kaffelover@zocom.se"
                         maxLength="254"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
+                    
+                <button className='submit-button' type='submit' >Brew me a cup!</button>
                 </form>
 
                 <label>
                     <input
                         type="checkbox"
                         name="gdpr-ok"
+                        required
                     />
                     <p>GDPR Ok!</p>
                 </label>
-
-                <footer className='createprofile-footer'>
-                    <button className='reusable-button'>Brew me a cup!</button>
-                </footer>
 
             </div>
 

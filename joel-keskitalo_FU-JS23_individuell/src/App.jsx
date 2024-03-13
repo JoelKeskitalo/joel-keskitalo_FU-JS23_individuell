@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing.jsx';
 import Menu from './components/Menu/Menu.jsx';
 import About from './components/About/About.jsx';

@@ -1,14 +1,26 @@
 import './profile.scss';
+import useStore from '../Store/Store';
+import NavigateButton from '../NavigateButton/NavigateButton.jsx';
+
 
 function Profile() {
 
+    const user = useStore(state => state.user)
+
+    if (!user) {
+        return <div>Du måste logga in för att kunna se din profil.</div>
+    }
+
 
     return (
-
+         
         <div className='profilepage-container'>
+            <header className='profilepage-header'>
+                <NavigateButton to="/menu" buttonText="Meny"/>
+            </header>
             <div className='profilepicture-container'></div>
-            <h3>Sixten Kaffelöver</h3>
-            <p>sixten.kaffelover@zocom.se</p>
+            <h3>{user.fullName}</h3>
+            <p>{user.email}</p>
 
 
 
@@ -61,9 +73,9 @@ function Profile() {
                     <h4>1669 kr</h4>
                 </div>
                     
-
-
             </div>
+
+
         </div>
 
 

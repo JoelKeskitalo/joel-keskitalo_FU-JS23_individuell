@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
+import useStore from '../Store/Store';
 import './menu.scss';
+
 
 function Menu() {
 
-
+    const user = useStore((state) => state.user)
 
 
     return (
@@ -17,11 +19,14 @@ function Menu() {
                     <div className='horizontal-line'></div>
                     <li><Link to="/about">Vårt kaffe</Link></li>
                     <div className='horizontal-line'></div>
-                    <li><Link to="/createprofile">Min profil</Link></li>
+                    
+                    <li>
+                        {user ? <Link to="/profile">Min profil</Link> : <Link to="/createprofile">Skapa Profil</Link>}
+                    </li>
+
                     <div className='horizontal-line'></div>
                     <li><Link to="/status">Orderstatus</Link></li>
 
-                    <li><Link to="/profile">Profile</Link></li>
 
                 </ul>
             </nav>
