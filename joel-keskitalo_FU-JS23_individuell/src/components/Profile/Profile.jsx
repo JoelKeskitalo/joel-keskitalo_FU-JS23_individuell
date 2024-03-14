@@ -5,7 +5,11 @@ import NavigateButton from '../NavigateButton/NavigateButton.jsx';
 
 function Profile() {
 
-    const user = useStore(state => state.user)
+    const { user, orders } = useStore(state => ({
+        user: state.user,
+        orders: state.orders // Hämta orders från storen
+        
+    }));
 
     if (!user) {
         return <div>Du måste logga in för att kunna se din profil.</div>
@@ -24,68 +28,23 @@ function Profile() {
 
 
 
-
             <div className="orderhistory-container">
                 <h3>Orderhistorik</h3>
-
-
-                <div className="order-item">
-                    <div className="order-left">
-                        <h4>#AB1123282323Z</h4>
-                        <span className='total'>total ordersumma</span>
+                {orders.map((order, index) => (
+                    <div key={index} className="order-item">
+                        <div className="order-left">
+                            <h4>#{order.ordernumber}</h4>
+                            <span className='date'>{order.orderDate}</span>
+                        </div>
+                        <div className="order-right">
+                            <span className='total'>Total ordersumma: {order.total}kr</span>
+                        </div>
+                        <hr />
                     </div>
-                    <div className="order-right">
-                        <span className="date">20/03/06</span>
-                        <span className="price">443kr</span>
-                    </div>
-                </div>
-                <hr />
-
-                <div className="order-item">
-                    <div className="order-left">
-                        <h4>#AB1123282323Z</h4>
-                        <span className='total'>total ordersumma</span>
-                    </div>
-                    <div className="order-right">
-                        <span className="date">20/03/06</span>
-                        <span className="price">443kr</span>
-                    </div>
-                </div>
-                <hr />
-
-
-
-                <div className="order-item">
-                    <div className="order-left">
-                        <h4>#AB1123282323Z</h4>
-                        <span className='total'>total ordersumma</span>
-                    </div>
-                    <div className="order-right">
-                        <span className="date">20/03/06</span>
-                        <span className="price">443kr</span>
-                    </div>
-                </div>
-                <hr />
-
-
-                <div className="order-summary">
-                    <h4>Totalt spenderat</h4>
-                    <h4>1669 kr</h4>
-                </div>
-                    
+                ))}
             </div>
-
-
         </div>
-
-
-
-    )
-
+    );
 }
-
-
-
-
 
 export default Profile

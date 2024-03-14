@@ -3,6 +3,9 @@
 
 body {
     @include flex-center;
+    margin: 1rem;
+    padding: 0;
+    font-family: $text-font;
 }
 
 
@@ -69,3 +72,36 @@ p {
 }
 
 
+
+// Responsivitet för skärmar mindre än 768px
+@media (max-width: 768px) {
+    body {
+        font-size: 0.8rem; // Mindre text på små skärmar
+    }
+
+    h1 {
+        font-size: 2.5rem; // Mindre rubriker på små skärmar
+    }
+
+    .aboutpage-container, .coffemenupage-container, .statuspage-container, .profilepage-container {
+        flex-direction: column;
+        width: 100vh; // Anpassa bredden till viewporten
+        height: auto; // Gör höjden automatisk
+    }
+
+    .content-container, .kaffe-container, .order-history-container {
+        flex-direction: column;
+        align-items: center; // Centrera innehållet
+    }
+
+    .image-container, .droneimage-container {
+        width: 100%; // Använd hela bredden för bilder
+        height: auto; // Gör höjden automatisk
+        background-size: cover; // Se till att bilden täcker containern
+    }
+
+    .cart, .createprofile-container {
+        width: 95%; // Använd nästan hela bredden
+        max-width: none; // Ta bort max-bredd
+    }
+}

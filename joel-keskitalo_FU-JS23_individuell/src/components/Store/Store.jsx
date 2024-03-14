@@ -57,11 +57,25 @@ const useStore = create((set) => ({ // Vi skapar vår store och "sätter" följa
 orders: [],
 orderDetails: null,
 
-sendOrder: () => set(() => {
-  const ordernumber = Math.floor(Math.random() * 1000); 
+
+sendOrder: () => set((state) => {
+  const ordernumber = Math.floor(Math.random() * 1000);
   const eta = Math.floor(Math.random() * 20) + 10;
 
-  return {orderDetails:{ ordernumber, eta } }
+  const newOrder = {
+    ordernumber,
+    eta,
+    items: [...state.cart],
+    total: state.cart.reduce((total, item) => total + item.price * item.quantity, 0),
+    orderDate: new Date().toISOString().split('T')[0],
+  };
+
+  return {
+    cart: [], // töm kundvagnen igen, eftersom vi ju ska skicka iväg vår beställning
+    orders: [...state.orders, newOrder], // här lägger vi till den nya ordern till orderhistoriken, dvs. orders 
+    orderDetails: newOrder // här uppdaterar vi orderDetails med den nya ordern
+  };
+
 }),
 // // // // // // // 
 
