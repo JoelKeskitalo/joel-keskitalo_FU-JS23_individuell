@@ -7,7 +7,7 @@ function Profile() {
 
     const { user, orders } = useStore(state => ({
         user: state.user,
-        orders: state.orders // Hämta orders från storen
+        orders: state.orders // Hämta orders från storen och dess state
         
     }));
 
@@ -39,7 +39,6 @@ function Profile() {
                         <div className="order-right">
                             <span className='total'>Total ordersumma: {order.total}kr</span>
                         </div>
-                        <hr />
                     </div>
                 ))}
             </div>
